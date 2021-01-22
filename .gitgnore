@@ -1,0 +1,4 @@
+*.md
+to_do.txt
+*.gitignore
+.vscode

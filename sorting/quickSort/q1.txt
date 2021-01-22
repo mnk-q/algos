@@ -1,0 +1,3 @@
+question Link : https://www.hackerearth.com/practice/algorithms/sorting/quick-sort/practice-problems/algorithm/prom-night
+Level         : Easy
+Submission    : https://www.hackerearth.com/submission/52176453/

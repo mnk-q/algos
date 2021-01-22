@@ -1,0 +1,24 @@
+Question Link : https://www.hackerrank.com/challenges/countingsort4/problem
+Difficulty :    Medium
+Solution:       https://www.hackerrank.com/challenges/countingsort4/submissions/code/196841111
+
+
+Solution
+def countSort(arr):
+    count_ar = [[]]
+    half = len(arr)//2-1
+    i=0
+    mx = 0
+    while(i<len(arr)):
+        if(i<=half):
+            arr[i][1]='-'
+        if(int(arr[i][0])>mx):
+            mx = int(arr[i][0])
+        if len(count_ar)<=mx:
+            count_ar.extend([[] for j in range(len(count_ar),mx+1)])
+        count_ar[int(arr[i][0])].append(arr[i][1]) 
+        i+=1
+    for i in count_ar:
+        if(len(i)>0):
+            print(*i, end=' ')
+
