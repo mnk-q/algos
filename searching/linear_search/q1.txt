@@ -1,0 +1,22 @@
+Question    : https://www.hackerrank.com/challenges/pairs/problem
+Level       : Medium
+Submission  : https://www.hackerrank.com/challenges/pairs/submissions/code/196924309
+
+Solution : Python
+
+def pairs(k, arr):
+    pair = 0
+    arr.sort()
+    n=len(arr)
+    i = 0
+    j = 0
+    while(i<n and j<n):
+        if(i<n and j<n and arr[j]-arr[i]<k  ):
+            j=j+1
+        if(i<n and j<n  and arr[j]-arr[i]>k):
+            i=i+1
+        if(i<n and j<n  and arr[j]-arr[i] == k):
+            pair+=1
+            i = i+1
+            j = j+1
+    return pair

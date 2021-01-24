@@ -1,0 +1,27 @@
+Question   : https://www.hackerearth.com/practice/data-structures/stacks/basics-of-stacks/practice-problems/algorithm/balanced-brackets-3-4fc590c6/
+Difficulty : Easy
+Submission : https://www.hackerearth.com/submission/52510532
+
+Solution
+tc = int(input())
+ans = []
+for _ in range(tc):
+    br = list(input())
+    tmp = []
+    for i in br:
+        if( i in ['[','{','(']):
+            tmp.append(i)
+        else:
+            if( i == '}' and tmp and tmp[-1] == '{'):
+                tmp.pop()
+            if( i == ']' and tmp and tmp[-1] == '['):
+                tmp.pop()
+            if( i == ')' and tmp and tmp[-1] == '('):
+                tmp.pop()
+    if(len(tmp)>0):
+        ans.append('NO')
+    else:
+        ans.append('YES')
+for i in ans:
+    print(i)
+   

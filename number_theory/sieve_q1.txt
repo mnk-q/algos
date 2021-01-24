@@ -1,0 +1,15 @@
+Question   : https://practice.geeksforgeeks.org/problems/sieve-of-eratosthenes5242
+Level      : Easy
+Submission : https://practice.geeksforgeeks.org/viewSol.php?subId=0414611111164140&pid=704146&user=spmv2006
+
+Solution
+def sieveOfEratosthenes(self, N):
+    	nos = [1 for i in range(N+1)]
+        n = 2
+        while (n*n <= N):
+            if(nos[n]==1):
+                for i in range(n*n,N+1,n):
+                    nos[i]=0
+            n += 1
+    	primes = [i for i in range(2,len(nos)) if nos[i]]
+    	return primes

@@ -1,0 +1,27 @@
+Question  : https://www.hackerearth.com/practice/data-structures/stacks/basics-of-stacks/practice-problems/algorithm/i-hate-even-subarrays/
+Level	  : Easy
+Submission: https://www.hackerearth.com/submission/52496014/
+
+Solution
+def digit(d):
+    nd = []
+    while(len(d)>0):
+        nd.append(d.pop())
+        while(len(d)>0 and len(nd)>0 and nd[-1]==d[-1]):
+            nd.pop()
+            d.pop()
+    if(len(nd)>0):
+        nd.reverse()
+        return ''.join(nd)
+    else:
+        return 'KHALI'
+
+
+# Write your code here
+tc = int(input())
+ans = []
+for _ in range(tc):
+    d = input()
+    ans.append(digit(list(d)))
+for i in ans:
+    print(i)
