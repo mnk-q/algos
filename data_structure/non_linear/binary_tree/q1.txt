@@ -1,0 +1,13 @@
+Question	: https://practice.geeksforgeeks.org/problems/height-of-binary-tree/1/
+Level		: Easy
+Submission	: https://practice.geeksforgeeks.org/viewSol.php?subId=938fda659dfc163c3aeb28a09a445f75&pid=700164&user=spmv2006
+
+Solution:
+class Solution:
+    def height(self, root):
+        if(root==None):
+            return 0
+        lh = self.height(root.left)
+        rh = self.height(root.right)
+        th = max(lh , rh) + 1
+        return th 

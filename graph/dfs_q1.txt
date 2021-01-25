@@ -1,0 +1,23 @@
+Question   : https://www.hackerearth.com/practice/algorithms/graphs/depth-first-search/practice-problems/algorithm/range-query-2/
+Level      : Easy
+Submission : https://www.hackerearth.com/submission/52517752
+
+Solution:
+n,q = input().split()
+n = int(n)
+q = int(q)
+ns = list(map(int,input().split()))
+ans = []
+qrs = []
+for _ in range(q):
+    qrs.append(list(map(int,input().split())))
+for i in qrs:
+    if(i[0]):
+        ns[(i[1]-1)] = 1 - ns[(i[1]-1)]
+    else:
+        ans.append(ns[i[2]-1])
+for i in ans:
+    if(i):
+        print('ODD')
+    else:
+        print("EVEN")

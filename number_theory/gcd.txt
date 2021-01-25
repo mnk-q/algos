@@ -1,0 +1,16 @@
+Question   : https://practice.geeksforgeeks.org/problems/gcd-of-array0614/1
+Level	   : Easy
+
+Solution
+
+def gcd2(a,b):
+        if(b==0):
+            return a
+        else:
+            return gcd2(b, a%b)
+  
+def gcd(n, arr):
+	buf = arr[0]
+	for i in range(1, n):
+        	buf = gcd2(buf, arr[i])
+        return buf

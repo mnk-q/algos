@@ -1,0 +1,20 @@
+Question     : https://www.hackerearth.com/practice/data-structures/stacks/basics-of-stacks/practice-problems/algorithm/super-reduced-strings-303701dd/
+Level	     : Easy
+Submission   : https://www.hackerearth.com/submission/52548450
+
+Solution
+s = input()
+s = list(s)
+i = 1
+ans = [s[0]]
+while(i<len(s)):
+    ans.append(s[i])
+    if(len(ans)>1):
+        if(ans[-1] == ans[-2]):
+            ans.pop()
+            ans.pop()
+    i+=1
+if(len(ans)==0):
+    print('Empty String')
+else:
+    print(''.join(ans))
