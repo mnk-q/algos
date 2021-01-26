@@ -1,0 +1,24 @@
+Question	: https://www.hackerearth.com/practice/data-structures/queues/basics-of-queues/practice-problems/algorithm/monk-and-power-of-time-3a648bf0/description/
+Level		: Easy
+Submission	: https://www.hackerearth.com/submission/52561443
+
+Solution:
+n = int(input())
+calling = list(map(int, input().split()))
+ideal = list(map(int, input().split()))
+count = 0
+i = 0
+t = 0
+while(True):
+    if(calling[0] == ideal[0]):
+        count+=1
+        i+=1
+        calling.pop(0)
+        ideal.pop(0)
+    else:
+        t=calling.pop(0)
+        calling.append(t)
+        count+=1
+    if(len(calling)==0) or len(ideal)==0:
+        break
+print(count)
