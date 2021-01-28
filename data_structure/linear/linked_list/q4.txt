@@ -1,0 +1,20 @@
+Question	: https://www.hackerrank.com/challenges/insert-a-node-at-a-specific-position-in-a-linked-list/problem
+Level		: Very Easy
+Submission	: https://www.hackerrank.com/challenges/insert-a-node-at-a-specific-position-in-a-linked-list/submissions/code/197768795
+
+Solution
+
+def insertNodeAtPosition(head, data, position):
+    if head:
+        tmp = head
+        i = 0
+        while(tmp):
+            tmp2 = tmp
+            tmp = tmp.next
+            i+=1
+            if(i == position):
+                break
+        ptr = SinglyLinkedListNode(data)
+        tmp2.next = ptr
+        ptr.next = tmp
+    return head

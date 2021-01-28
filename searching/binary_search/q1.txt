@@ -1,0 +1,28 @@
+Question    : https://www.hackerearth.com/practice/algorithms/searching/binary-search/practice-problems/algorithm/discover-the-monk/description/
+Level       : Easy
+Submission  : https://www.hackerearth.com/submission/52617884/
+
+Solution : Python
+
+def binarySearch(qs, start, end):
+    while(start<=end):
+        mid = (start+end)//2
+        if(ns[mid] == qs):
+            return 'YES'     
+        elif(ns[mid] < qs):
+            start = mid+1
+        else:
+            end = mid-1
+    return 'NO'
+
+
+# Write your code here
+n, q = map(int, input().split())
+ns = list(map(int, input().split()))
+ans = []
+ns.sort()
+for _ in range(q):
+    qs = int(input())
+    ans.append(binarySearch(qs ,0, n-1))
+for i in ans:
+    print(i)

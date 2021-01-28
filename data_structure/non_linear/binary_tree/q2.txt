@@ -1,0 +1,14 @@
+Question	: https://leetcode.com/problems/invert-binary-tree/
+Level		: Easy
+Submission	: https://leetcode.com/submissions/detail/448786569/
+
+Solution  :
+
+def invertTree(self, root: TreeNode) -> TreeNode:
+        if root:
+            left = root.left
+            root.left = root.right
+            root.right = left
+            self.invertTree(root.left)
+            self.invertTree(root.right)
+        return root

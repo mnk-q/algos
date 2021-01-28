@@ -1,0 +1,25 @@
+Question     : https://www.hackerearth.com/practice/data-structures/stacks/basics-of-stacks/practice-problems/algorithm/fun-game-91510e9f
+Level	     : Easy
+Submission   : https://www.hackerearth.com/submission/52595308
+
+Solution:
+def getAns(barr):
+   arr = barr.copy()
+   arr.reverse()
+   out = []
+   while arr and barr:
+       if arr[-1] > barr[-1]:
+           out.append(1)
+           barr.pop()
+       elif arr[-1] < barr[-1]:
+           out.append(2)
+           arr.pop()
+       else:
+           out.append(0)
+           arr.pop()
+           barr.pop()
+   return out
+n = int(input())
+barr = list(map(int, input().split()))
+out = getAns(barr)
+print (*out)

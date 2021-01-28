@@ -1,0 +1,15 @@
+Question	: https://www.hackerrank.com/challenges/reverse-a-linked-list/problem
+Level		: Easy
+Submission	: https://www.hackerrank.com/challenges/reverse-a-linked-list/submissions/code/197775063
+
+Solution
+
+def reverse(head):
+    prev, nextt, current = None, None, head
+    while(current):
+        nextt = current.next
+        current.next = prev
+        prev=current
+        current = nextt
+    head = prev
+    return head

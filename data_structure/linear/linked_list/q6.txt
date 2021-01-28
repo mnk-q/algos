@@ -1,0 +1,11 @@
+Question	: https://www.hackerrank.com/challenges/print-the-elements-of-a-linked-list-in-reverse/problem
+Level		: Easy
+Submission	: https://www.hackerrank.com/challenges/print-the-elements-of-a-linked-list-in-reverse/submissions/code/197770993
+
+Solution
+
+def reversePrint(head):
+    #You will have no doubt in recursion after this
+    if(head):
+        reversePrint(head.next)
+        print(head.data)

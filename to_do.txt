@@ -1,7 +1,11 @@
 Algorithms list for practice-:
-  Sorting
-  Selection sort, Bubble sort, Insertion sort
-  Counting sort, Quick sort, Merge sort
+Sorting 
+  Selection sort, 
+  Bubble sort, 
+  Insertion sort
+  Counting sort, 
+  Quick sort, 
+  Merge sort
 Searching 
   Linear search 
   Binary search

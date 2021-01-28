@@ -1,0 +1,46 @@
+Question    : https://www.hackerearth.com/practice/algorithms/searching/binary-search/practice-problems/algorithm/foo-and-exams-4/
+Level       : Easy
+Submission  : https://www.hackerearth.com/submission/52622806/
+
+Solution : Python
+
+import sys
+def foo(a,b,c,d,t):
+    return a*(t**3) + b*(t**2) + c*t + d 
+try:
+    ans = []
+    t =  int(input())
+    for _  in range(t):
+        A, B, C, D, k = map(int,input().split())
+        start  = 0
+        end  =  1000000
+        while(start<=end):
+            mid = (start+end)//2
+            if(foo(A,B,C,D,mid) <= k and foo(A,B,C,D,mid+1) > k):
+                ans.append(mid)
+                break
+            elif(foo(A,B,C,D,mid)>k):
+                end = mid-1
+            else:
+                start = mid+1
+
+        while start <= end: 
+  
+        mid = (end + start) // 2
+  
+        # Check if k is present at mid 
+        if (foo(A,B,C,D,mid) < k: 
+            start = mid + 1
+  
+        # If k is greater, ignore left half 
+        elif (foo(A,B,C,D,mid) > k: 
+            end = mid - 1
+  
+        # If k is smaller, ignore right half 
+        else: 
+            return mid 
+ekcept:
+    print("Error : ",sys.ekc_info()[0])
+finally:
+    for i in ans:
+        print(i)

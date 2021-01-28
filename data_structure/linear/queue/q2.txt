@@ -1,0 +1,38 @@
+Question	: https://www.hackerrank.com/challenges/queue-using-two-stacks
+Level		: Medium
+Submission	: https://www.hackerrank.com/challenges/queue-using-two-stacks/submissions/code/197592596
+
+Solution
+
+def enqueue(item):
+    st1.append(item)
+def dequeue():
+    if(not st2):
+        while(st1):
+            st2.append(st1.pop())
+    st2.pop()
+def peek():
+    if(st2):
+        return st2[-1]
+    else:
+        while(st1):
+            st2.append(st1.pop())
+        return st2[-1]
+n = int(input())
+st1 = []
+st2 = []
+# two stacks
+op = []
+for _ in range(n):
+    nq = input().split()
+    if(len(nq)==1):
+        if(nq[0]=='2'):
+            dequeue()
+        else:
+            op.append(peek())
+    else:
+        n = int(nq[1])
+        enqueue(n)
+
+for i in op:
+    print(i)

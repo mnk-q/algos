@@ -1,0 +1,17 @@
+Question	: https://www.hackerrank.com/challenges/insert-a-node-at-the-head-of-a-linked-list/problem
+Level		: Very Easy
+Submission	: https://www.hackerrank.com/challenges/insert-a-node-at-the-head-of-a-linked-list/submissions/code/197767908
+
+Solution : Python
+
+def insertNodeAtHead(head, data):
+    # Write your code here
+    if(head):
+        ptr  = SinglyLinkedListNode(data)
+        ptr.next = head
+        head = ptr
+    else:
+        ptr  = SinglyLinkedListNode(data)
+        head = ptr
+        ptr.next =None
+    return head
