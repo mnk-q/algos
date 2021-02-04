@@ -1,0 +1,17 @@
+Question	: https://www.hackerrank.com/challenges/larrys-array/
+Level		: Medium
+Submission	: https://www.hackerrank.com/challenges/larrys-array/submissions/code/197898537
+
+Solution
+
+def larrysArray(A):
+    inv = 0
+    for i in range(len(A)):
+        for j in range(len(A)):
+            if(A[j]> A[i] and j<i):
+                inv+=1
+    if(inv%2):
+        return 'NO'
+    else:
+        return 'YES'
+        

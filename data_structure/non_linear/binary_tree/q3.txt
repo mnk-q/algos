@@ -1,0 +1,24 @@
+Question	: https://www.hackerrank.com/challenges/tree-huffman-decoding/problem
+Level		: Medium
+Submission	: https://www.hackerrank.com/challenges/tree-huffman-decoding/submissions/code/198276208
+
+Solution
+
+def decodeHuff(root, s):
+    #Enter Your Code Here
+    i = 0
+    l = len(s)
+    while(True):
+        temp = root
+        while(temp.left or temp.right):
+            if(s[i] == '1'):
+                temp = temp.right
+                # print("{} with {}".format(temp.data, s[i]))
+                i+=1
+            else:
+                temp = temp.left
+                # print("{} with {}".format(temp.data, s[i]))
+                i+=1
+        print(temp.data,end='')
+        if(i==l):
+            break

@@ -1,0 +1,25 @@
+Question	: https://www.hackerrank.com/challenges/binary-search-tree-lowest-common-ancestor/problem
+Level		: Easy
+Submission 	: https://www.hackerrank.com/challenges/binary-search-tree-lowest-common-ancestor/submissions/code/198278605
+
+Solution
+
+def lca(root, v1, v2):
+    #finding  v1
+    temp = root
+    while(temp):
+        t1, t2 = temp, temp
+        if(t1.info > v1):
+            t1 = t1.left
+        elif(t1.info < v1):
+            t1 = t1.right
+        if(t2.info > v2):
+            t2 = t2.left
+        elif(t2.info < v2):
+            t2 = t2.right
+        if(t1 and t2 and t1.info == t2.info):
+            temp = t1;
+        else:
+            break
+    return temp
+        

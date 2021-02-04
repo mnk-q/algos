@@ -1,0 +1,52 @@
+Question	: https://www.hackerrank.com/challenges/ctci-contacts/problem
+Level		: Hard
+Submission	: https://www.hackerrank.com/challenges/ctci-contacts/submissions/code/198836909
+
+Solution
+class Trie(object):
+    def __init__(self, data):
+        self.data = data
+        self.children = []
+        self.word_finished = False
+        self.words = 1
+
+def add(root, word):
+    node = root
+    for letter in word:
+        found = 0
+        for child in node.children:
+            if(child.data == letter):
+                node = child
+                node.words+=1
+                found = 1
+                break
+        if(not found):
+            new_node = Trie(letter)
+            node.children.append(new_node)
+            node = new_node
+
+def find(root, word):
+    node = root
+    for letter in word:
+        found = 0
+        for child in node.children:
+            if(child.data == letter):
+                found = 1
+                node = child
+                wrds = node.words
+                break
+        
+        if(not found):
+            return 0
+    
+    return wrds
+
+
+n = int(input())
+root = Trie('0')
+for _ in range(n):
+    op, contact = input().split()
+    if(op=='add'):
+        add(root, contact)
+    else:
+        print(find(root,contact))

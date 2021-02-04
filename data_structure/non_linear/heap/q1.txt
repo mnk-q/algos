@@ -1,0 +1,35 @@
+Question	: https://www.hackerearth.com/practice/data-structures/trees/heapspriority-queues/practice-problems/algorithm/monk-and-champions-league/
+Level		: Easy
+Submission	: https://www.hackerearth.com/submission/52665632/
+
+Solution
+
+def build_max_heap(arr,i,size):
+    left = i*2 
+    right = i*2+1
+    if(left<size and arr[left]>arr[i]):
+        largest = left
+    else:
+        largest = i
+    if(right<size and arr[right]>arr[i]):
+        largest = right
+    if(largest != i):
+        arr[i],arr[largest]=arr[largest],arr[i]
+        build_max_heap(arr,largest,size)
+
+
+
+
+
+m , n = map(int, input().split())
+rows= list(map(int, input().split()))
+rows.insert(0,0)
+sale = 0
+for i in range(len(rows)//2, 0, -1):
+    build_max_heap(rows,i,len(rows))
+for i in range(n):
+    sale = sale + rows[1]
+    rows[1] = rows[1]-1
+    for i in range(len(rows)//2, 0, -1):
+        build_max_heap(rows,i,len(rows))
+print(sale)
